@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/custom.css') }}">
+        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+        <div class="elfsight-app-c4614c70-cfcd-4aa4-8447-239c18b885ee"></div>
+        <title>BrewDay Login</title>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">BrewDay</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+    </head>
+
+    <body>
+        <div class="login">
+            <h1>Login</h1>
+            <div class="links">
+                <a href="{{ url_for('login') }}" class="active">Login</a>
+                <a href="{{url_for('register')}}">Register</a>
+            </div>
+
+            <form action="{{ url_for('login') }}" method="post">
+                <label for="username"></label>
+                <input type="text" name="username" placeholder="Username" id="username" required>
+
+                <label for="password"></label>
+                <input type="password" name="password" placeholder="Password" id="password" required>
+
+                <input type="checkbox" class="custom-control-input" id="remember">
+                <label class="custom-control-label" for="remember" style="color: white; text-align: left;">Remember me</label>
+
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </body>
+
+</html>
